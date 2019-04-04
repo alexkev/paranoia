@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import * as $ from 'jquery';
 
 @Component({
@@ -19,7 +18,7 @@ export class ParanoiaComponent implements OnInit {
         setTimeout(function () {
           if (flipResult <= 0.5) {
             $('#coin').addClass('heads');
-            console.log('it is head');
+            console.log('it is heads');
           }
           else {
             $('#coin').addClass('tails');
