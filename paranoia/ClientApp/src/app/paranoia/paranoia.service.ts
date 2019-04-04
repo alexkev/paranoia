@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ParanoiaService {
-  paranoia: Paranoia[] = [];
 
   constructor(private http: HttpClient) { }
 
