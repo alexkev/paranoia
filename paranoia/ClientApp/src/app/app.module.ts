@@ -32,7 +32,7 @@ import { ParanoiaService } from './paranoia/paranoia.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'paranoias', component: ParanoiaComponent },
+      { path: 'paranoia', component: ParanoiaComponent },
     ])
   ],
   providers: [ParanoiaService],

@@ -23,7 +23,7 @@ export class ParanoiaService {
   }
 
   getParanoias() {
-    this.http.get<Paranoia[]>(this.myAppUrl + 'api/paranoia')
+    this.http.get<Paranoia[]>(this.myAppUrl + 'api/paranoias')
       .subscribe(result => {
         this.paranoiaArray = result;
         this.paranoiaListChangedEvent.next(this.paranoiaArray.slice())

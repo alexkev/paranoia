@@ -38,7 +38,9 @@ export class ParanoiaComponent implements OnInit {
       .subscribe(
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
+          console.log(this.paranoiaArray);
         }
       );
+      this.paranoiaService.getParanoias();
   }
 }
