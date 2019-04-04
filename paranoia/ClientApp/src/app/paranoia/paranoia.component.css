@@ -61,6 +61,8 @@ h4 {
 
 /* input */
 #input {
+  display: grid;
+  grid-column: 1/2;
   position: absolute;
   top: 30em;
 }
