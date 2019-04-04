@@ -1,16 +1,34 @@
+<div id="container">
+  <div id="coin">
+      <img src="../../assets/Heads.svg" class="side-a" alt="Alternate Text" />
+      <img src="../../assets/Tails.svg" class="side-b" alt="Alternate Text" />
+  </div>
+  <!--<h4>Click on coin to flip</h4>-->
 
-<div id="gridcontainer">
-<div id="coin">
-    <img src="../../assets/Heads.svg" class="side-a" alt="Alternate Text" />
-    <img src="../../assets/Tails.svg" class="side-b" alt="Alternate Text" />
-</div>
-<!--<h4>Click on coin to flip</h4>-->
+  <div id="input">
+    <div id="istyle">
+      <form action="/" method="post">
+        <fieldset>
+          <input type="text" name="name" value=""  placeholder="Enter Question"/>
+          <button>Add</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 
-<div id="input">
-  <form action="/" method="post">
-    <fieldset>
-      <input type="text" name="name" value=""  placeholder="Enter Question"/>
-    </fieldset>
-  </form>
+  <div id="sort">
+    <div id="sstyle">
+      <h4>Sort</h4>
+      <form action="/" method="post">
+        <select>
+          <option value="pop">Most Popular</option>
+          <option value="random">Random</option>
+        </select>
+      </form>
+    </div>
+  </div>
 </div>
+
+<div id="cards">
+  <app-card></app-card>
 </div>

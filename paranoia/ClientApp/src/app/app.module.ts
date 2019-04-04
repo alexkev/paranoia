@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ParanoiaComponent } from './paranoia/paranoia.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ParanoiaComponent } from './paranoia/paranoia.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ParanoiaComponent
+    ParanoiaComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
