@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Paranoia } from './paranoia.model';
 import * as $ from 'jquery';
 
+import { Paranoia } from './paranoia.model';
+import {ParanoiaService } from './paranoia.service';
+
+
 @Component({
   selector: 'app-paranoia',
   templateUrl: './paranoia.component.html',
