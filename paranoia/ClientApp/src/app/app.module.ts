@@ -12,6 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ParanoiaComponent } from './paranoia/paranoia.component';
 import { CardComponent } from './card/card.component';
 
+import { ParanoiaService } from './paranoia/paranoia.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { CardComponent } from './card/card.component';
       { path: 'paranoia', component: ParanoiaComponent },
     ])
   ],
-  providers: [],
+  providers: [ParanoiaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
