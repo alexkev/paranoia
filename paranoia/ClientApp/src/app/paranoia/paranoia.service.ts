@@ -9,25 +9,31 @@ import 'rxjs/add/observable/throw';
 
 import { Paranoia } from './paranoia.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ParanoiaService {
   public paranoiaArray: Paranoia[];
+  paranoiaListChangedEvent = new Subject<Paranoia[]>();
+
   myAppUrl: string = "";  
 
-  constructor(private _http: Http, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.myAppUrl = baseUrl;
   }
 
   getParanoias() {
-    return this._http.get(this.myAppUrl + 'api/Paranoias')
-      .map((response: Response) => response.json())
-      .catch(this.errorHandler);
+    this.http.get<Paranoia[]>(this.myAppUrl + 'api/paranoia')
+      .subscribe(result => {
+        this.paranoiaArray = result;
+        this.paranoiaListChangedEvent.next(this.paranoiaArray.slice())
+        console.log(result);
+    }, error => console.error(error));
   }
 
-  errorHandler(error: Response) {
-    console.log(error);
-    return Observable.throw(error);
-  }  
+  // errorHandler(error: Response) {
+  //   console.log(error);
+  //   return Observable.throw(error);
+  // }  
 
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Paranoia } from './paranoia.model';
 import * as $ from 'jquery';
-
-import { Paranoia } from './paranoia.model';
 import {ParanoiaService } from './paranoia.service';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -12,20 +11,10 @@ import {ParanoiaService } from './paranoia.service';
   styleUrls: ['./paranoia.component.css']
 })
 export class ParanoiaComponent implements OnInit {
-  public paranoiaArray: Paranoia[] = [
-    {
-      id: 1,
-      question: 'HELLO WORLD -  Server not working',
-      like: 500
-    },
-    {
-      id: 2,
-      question: 'HELLO WORLD -  Server not working',
-      like: 500
-    }
-  ];
+  public paranoiaArray: Paranoia[];
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private paranoiaService: ParanoiaService) { }
 
   ngOnInit() {
     // Coin flip
@@ -44,5 +33,12 @@ export class ParanoiaComponent implements OnInit {
       });
 
     // GET Array of Paranoia
+    // this.paranoiaArray = this.paranoiaService.;
+    this.subscription = this.paranoiaService.paranoiaListChangedEvent
+      .subscribe(
+        (paranoiaArray: Paranoia[]) => {
+          this.paranoiaArray = paranoiaArray;
+        }
+      );
   }
 }
