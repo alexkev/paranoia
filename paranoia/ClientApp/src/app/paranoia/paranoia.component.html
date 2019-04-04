@@ -30,5 +30,10 @@
 </div>
 
 <div id="cards">
-  <app-card></app-card>
+  <ng-container *ngFor="let paranoia of paranoias">
+    <div id="card">
+      <p>{{paranoia.questions}}</p>
+      <p>{{paranoia.like}}</p>
+    </div>
+  </ng-container>   
 </div>

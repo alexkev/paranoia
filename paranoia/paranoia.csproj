@@ -26,7 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\paranoia\file.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\paranoia\file.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
