@@ -26,9 +26,11 @@
   
   <div id="cards">
     <ng-container *ngFor="let paranoia of paranoiaArray">
-      <div id="card">
-        <p>{{paranoia.question}}</p>
-        <p>{{paranoia.like}}</p>
+      <div class="card panel panel-default">
+        <div class="panel-body">
+            <p><i>{{paranoia.question}}</i></p>
+            <p>{{paranoia.like}}</p>
+        </div>
       </div>
     </ng-container>   
   </div>
