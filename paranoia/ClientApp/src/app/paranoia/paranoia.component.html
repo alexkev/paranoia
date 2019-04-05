@@ -3,7 +3,7 @@
       <img src="../../assets/Heads.svg" class="side-a" alt="Alternate Text" />
       <img src="../../assets/Tails.svg" class="side-b" alt="Alternate Text" />
   </div>
-  <!--<h4>Click on coin to flip</h4>-->
+  <h4 class="click">Click on coin to flip</h4>
 
   <div id="input">
     <div id="istyle">
@@ -16,25 +16,22 @@
     </div>
   </div>
 
-  <div id="sort">
-    <div id="sstyle">
-      <h4>Sort</h4>
-      <form action="/" method="post">
-        <select>
-          <option value="pop">Most Popular</option>
-          <option value="random">Random</option>
-        </select>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div id="cards">
-  <ng-container *ngFor="let paranoia of paranoiaArray">
-    <div id="card">
-      <p>{{paranoia.question}}</p>
-      <p>{{paranoia.like}}</p>
-    </div>
-  </ng-container>   
-</div>
   
+  <div id="sort">
+    <h5>Sort</h5>
+    <button class="btn">Most Popular</button>
+    <button class="btn">Random</button>
+  </div>
+
+  
+  <div id="cards">
+    <ng-container *ngFor="let paranoia of paranoiaArray">
+      <div id="card">
+        <p>{{paranoia.question}}</p>
+        <p>{{paranoia.like}}</p>
+      </div>
+    </ng-container>   
+  </div>
+  
+  
+</div>

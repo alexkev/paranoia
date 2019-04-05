@@ -1,22 +1,6 @@
-body {
-  padding-top: 50px;
-  background: red;
-  -webkit-perspective: 800px;
-}
-
-#container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-
+/*  COIN FLIP */
 #coin {
   /*position: relative;*/
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
   cursor: pointer;
   transition: -webkit-transform 1s ease-in;
   -webkit-transform-style: preserve-3d;
@@ -24,13 +8,13 @@ body {
 
 .side-a {
   position: absolute;
-  top: 100px
+  top: 0px
 }
 
 .side-b {
   -webkit-transform: rotateY(-180deg);
   position: absolute;
-  top: 100px
+  top: 0px
 }
 
 #coin.heads {
@@ -55,10 +39,68 @@ body {
   to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
 }
 
-h4 {
-  position: absolute;
-  top: 10em;
+body {
+  padding-top: 50px;
+  background: red;
+  /* -webkit-perspective: 800px; */
+  display: flex;
+  justify-content: center;
 }
 
-/* input */
+#container {
+  display: grid;
+  grid-template-columns: 10vw 50vw 10vw;
+  grid-template-rows: auto;
+  justify-items: center;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; */
+}
+
+#coin {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  margin: 50px 20px 20px 20px;
+  width: 250px;
+  height: 250px;
+}
+
+.side-a, .side-b {
+  width: 100%;
+  height: 100%;
+}
+
+
+h4 {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+#input {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+}
+
+#istyle>fieldset>input {
+  height: 2em;
+  width: 90%;
+}
+
+#sort {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 7 / 8;
+}
+
+
+#cards {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 8 / 9;
+}
 
