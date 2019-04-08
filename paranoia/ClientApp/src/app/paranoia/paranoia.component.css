@@ -152,3 +152,20 @@ textarea {
     width: 500px;
   }
 }
+
+#like {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  float: right;
+  margin-top: 15px;
+}
+
+#like>img {
+  padding: 0px 12px;
+}
+
+#like>p {
+  position: relative;
+  bottom: 2px;
+}

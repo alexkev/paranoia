@@ -51,4 +51,6 @@ export class ParanoiaComponent implements OnInit {
   random() {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
   }
+
+  like() {}
 }
