@@ -128,7 +128,9 @@ textarea {
   margin: .5em;
 }
 
-
+#add {
+  float: right;
+}
 
 #cards {
   grid-column: 2 / 3;
