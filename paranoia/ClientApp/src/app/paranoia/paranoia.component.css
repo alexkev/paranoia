@@ -135,6 +135,7 @@ textarea {
 #cards {
   grid-column: 2 / 3;
   grid-row: 8 / auto;
+  padding: 0px 0px 200px 0px; 
 }
 
 .card {
