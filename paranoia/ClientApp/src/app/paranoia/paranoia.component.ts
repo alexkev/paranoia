@@ -43,4 +43,12 @@ export class ParanoiaComponent implements OnInit {
       );
       this.paranoiaService.getParanoias();
   }
+
+  mostPop() {
+    this.paranoiaArray.sort((a, b) => (a.like > b.like) ? -1 : 1)
+  }
+
+  random() {
+    this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
+  }
 }
