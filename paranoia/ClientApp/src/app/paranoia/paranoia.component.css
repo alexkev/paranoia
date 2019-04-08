@@ -3,6 +3,7 @@
   /*position: relative;*/
   cursor: pointer;
   transition: -webkit-transform 1s ease-in;
+  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
 }
 
@@ -12,6 +13,7 @@
 }
 
 .side-b {
+  transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
   position: absolute;
   top: 0px
@@ -35,6 +37,30 @@
   to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
 }
 @-webkit-keyframes flipTails {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+}
+@-moz-keyframes flipHeads {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+}
+@-moz-keyframes flipTails {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+}
+@-o-keyframes flipHeads {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+}
+@-o-keyframes flipTails {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+}
+@keyframes flipHeads {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+}
+@keyframes flipTails {
   from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
   to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
 }
@@ -70,8 +96,7 @@ body {
   height: 100%;
 }
 
-
-h4 {
+.click {
   grid-column: 2 / 3;
   grid-row: 5 / 6;
 }
@@ -81,20 +106,19 @@ h4 {
   grid-row: 6 / 7;
 }
 
-#istyle>fieldset>input {
-  height: 2em;
-  width: 90%;
-}
-
 #sort {
   grid-column: 2 / 3;
   grid-row: 7 / 8;
 
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
 }
 
+#sort>h4, button {
+  margin: .5em;
+}
 
 #cards {
   grid-column: 2 / 3;
