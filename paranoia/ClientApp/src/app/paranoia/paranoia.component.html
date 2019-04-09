@@ -36,7 +36,14 @@
       <div class="card panel panel-default">
         <div class="panel-body">
             <p><i>{{paranoia.question}}</i></p>
-            <p>{{paranoia.like}}</p>
+            <ng-container >
+              <div id="like">
+                <img onclick="this.src='../../assets/thumb-blue.svg'" src="../../assets/Vector.svg" alt="">
+                <!-- <img (click)="like()" [src]="../../assets/Vector.svg" alt=""> -->
+                <!-- <p>{{liked}}</p> -->
+                <p><strong>{{paranoia.like}}</strong></p>
+              </div>
+            </ng-container>
         </div>
       </div>
     </ng-container>   

@@ -19,6 +19,7 @@ export class ParanoiaComponent implements OnInit {
   subscription: Subscription;
   editMode = false;
 
+   
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router,
@@ -50,6 +51,8 @@ export class ParanoiaComponent implements OnInit {
         }
       );
       this.paranoiaService.getParanoias();
+
+
   }
 
   onSubmit(form: NgForm) {
@@ -69,5 +72,9 @@ export class ParanoiaComponent implements OnInit {
 
   random() {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
+  }
+
+  like() {
+    
   }
 }
