@@ -93,11 +93,11 @@ export class ParanoiaService {
   }
 
   updateLike(id: number, likes: number) {
-    let pararnoiaItem = this.getParanoia(id);
+    let paranoiaItem = this.getParanoia(id);
 
-    pararnoiaItem.like += likes;
+    paranoiaItem.like += likes;
 
-    this.updateParanoia(this.getParanoia(id), pararnoiaItem);
+    this.updateParanoia(this.getParanoia(id), paranoiaItem);
   }
 
 }
