@@ -23,9 +23,6 @@ export class ParanoiaComponent implements OnInit {
   originalParanoia: Paranoia;
   editMode = false;
 
-
-   
-
   constructor(private paranoiaService: ParanoiaService,
     private router: Router) { }
 
@@ -51,6 +48,7 @@ export class ParanoiaComponent implements OnInit {
       .subscribe(
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
+          this.paranoiaArray.reverse();
           console.log(this.paranoiaArray);
         }
       );
@@ -68,13 +66,21 @@ export class ParanoiaComponent implements OnInit {
     }
     this.router.navigate(['/paranoia']);
     this.paranoiaService.getParanoias();
+    form.reset();
   }
 
   mostPop() {
-    this.paranoiaArray.sort((a, b) => (a.like > b.like) ? -1 : 1)
+    this.paranoiaArray.sort((a, b) => (a.like > b.like) ? -1 : 1);
   }
 
   random() {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
+  }
+
+  newest(){
+    this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
+  }
+  oldest(){
+    this.paranoiaArray.sort((a, b) => (a.id < b.id) ? -1 : 1);;
   }
 }

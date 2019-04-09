@@ -1,11 +1,11 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Router } from '@angular/router';
+// import { Http, Response } from '@angular/http';
+// import { Observable } from 'rxjs/Observable';
+// import { Router } from '@angular/router';
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw'; 
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/catch';
+// import 'rxjs/add/observable/throw'; 
 
 import { Paranoia } from './paranoia.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';

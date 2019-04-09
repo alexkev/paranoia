@@ -1,7 +1,7 @@
 <div id="container">
   <div id="coin">
-      <img src="../../assets/Heads.svg" class="side-a" alt="Alternate Text" />
-      <img src="../../assets/Tails.svg" class="side-b" alt="Alternate Text" />
+    <img src="../../assets/Heads.svg" class="side-a" alt="Alternate Text" />
+    <img src="../../assets/Tails.svg" class="side-b" alt="Alternate Text" />
   </div>
   <!-- <h4 class="click">Click on coin to flip</h4> -->
 
@@ -9,31 +9,43 @@
     <div class="card panel panel-default" id="istyle">
       <form class="panel-body" action="/" (ngSubmit)="onSubmit(f)" #f="ngForm" method="post">
         <fieldset>
-          <textarea type="text"
-                 id="question"
-                 name="question"
-                 value="submitQuestion"
-                 placeholder="Enter Question"
-                 ngModel
-                 #question="ngModel"
-                 required ></textarea>
+          <textarea type="text" id="question" name="question" value="submitQuestion" placeholder="Enter Question"
+            ngModel #question="ngModel" required></textarea>
           <input id="add" class="btn btn-success" [disabled]="!f.valid" type="submit" />
         </fieldset>
       </form>
     </div>
   </div>
 
-  
+
   <div id="sort">
-    <h4>Sort:</h4>
-    <button (click)="mostPop()" class="btn btn-success">Most Popular</button>
-    <button (click)="random()" class="btn btn-primary">Random</button>
+    <div class="bar">
+      <h4>Sort:</h4>
+      <div class="btn-group" role="group" aria-label="...">
+        <button (click)="newest()" class="btn btn-default">Newest</button>
+        <button (click)="oldest()" class="btn btn-default">Oldest</button>
+        <button (click)="mostPop()" class="btn btn-default">Most Popular</button>
+        <button (click)="random()" class="btn btn-default">Random</button>
+      </div>
+    </div>
+    <div class="btn-group dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Sort <span class="caret"></span>
+      </button>
+      <div class="dropdown-content">
+        <a (click)="newest()">Newest</a>
+        <a (click)="oldest()">Oldest</a>
+        <a (click)="mostPop()">Most Popular</a>
+        <a (click)="random()">Random</a>
+      </div>
+    </div>
   </div>
 
-  
+
   <div id="cards">
     <app-cards *ngFor="let paranoia of paranoiaArray" [paranoia]="paranoia">
-    </app-cards>   
+    </app-cards>
   </div>
-  
+
 </div>
