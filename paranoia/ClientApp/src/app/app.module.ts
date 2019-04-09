@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ParanoiaComponent } from './paranoia/paranoia.component';
-import { CardComponent } from './card/card.component';
+import { CardsComponent } from './paranoia/cards/cards.component';
 
 import { ParanoiaService } from './paranoia/paranoia.service';
 
@@ -22,7 +22,7 @@ import { ParanoiaService } from './paranoia/paranoia.service';
     CounterComponent,
     FetchDataComponent,
     ParanoiaComponent,
-    CardComponent
+    CardsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -32,19 +32,14 @@
 
   
   <div id="cards">
-    <ng-container *ngFor="let paranoia of paranoiaArray">
-      <div class="card panel panel-default">
-        <div class="panel-body">
-            <p><i>{{paranoia.question}}</i></p>
-            <ng-container >
-              <div id="like">
-                <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../assets/Vector.svg" alt="">
-                <p><strong>{{paranoia.like}}</strong></p>
-              </div>
-            </ng-container>
-        </div>
-      </div>
-    </ng-container>   
+    <app-cards *ngFor="let paranoia of paranoiaArray" [paranoia]="paranoia">
+    
+            <!-- <p><i>{{paranoia.question}}</i></p>
+            <div id="like">
+              <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../assets/Vector.svg" alt="">
+              <p><strong>{{paranoia.like}}</strong></p>
+            </div> -->
+    </app-cards>   
   </div>
   
 </div>

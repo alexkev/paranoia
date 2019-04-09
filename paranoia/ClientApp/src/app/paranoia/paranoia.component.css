@@ -172,7 +172,7 @@ textarea {
   }
 }
 
-#like {
+/* #like {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -195,4 +195,4 @@ textarea {
 #like>p {
   position: relative;
   bottom: 2px;
-}
+} */

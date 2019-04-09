@@ -4,7 +4,7 @@ import * as $ from 'jquery';
 import { ParanoiaService } from './paranoia.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-paranoia',
@@ -13,17 +13,18 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ParanoiaComponent implements OnInit {
   public paranoiaArray: Paranoia[];
-  originalParanoia: Paranoia;
   subscription: Subscription;
+
+  paranoia: Paranoia;
+  
+  originalParanoia: Paranoia;
   editMode = false;
-  checked: boolean = false;
-  id: string;
+  // checked: boolean = false;
 
    
 
   constructor(private paranoiaService: ParanoiaService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private router: Router) { }
 
   ngOnInit() {
     // Coin flip
@@ -50,9 +51,8 @@ export class ParanoiaComponent implements OnInit {
           console.log(this.paranoiaArray);
         }
       );
-      this.paranoiaService.getParanoias();
-
-
+      
+    this.paranoiaService.getParanoias();
   }
 
   onSubmit(form: NgForm) {
@@ -75,17 +75,16 @@ export class ParanoiaComponent implements OnInit {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
   }
 
-  like(id: any) {
-    console.log('clicked' + ' ' + id)
-    if (!this.checked) {
-      $('#' + id).attr('src', '../../assets/thumb-blue.svg');
-      this.checked = true;
-      this.paranoiaService.updateLike(id, 1);
-      
-    } else {
-      $('#' + id).attr('src', '../../assets/Vector.svg');
-      this.checked = false;
-      this.paranoiaService.updateLike(id, -1);
-    }
-  }
+  // like(id: any) {
+  //   console.log('clicked' + ' ' + id)
+  //   if (!this.checked) {
+  //     $('#' + id).attr('src', '../../assets/thumb-blue.svg');
+  //     this.checked = true;
+  //     this.paranoiaService.updateLike(id, 1);
+  //   } else {
+  //     $('#' + id).attr('src', '../../assets/Vector.svg');
+  //     this.checked = false;
+  //     this.paranoiaService.updateLike(id, -1);
+  //   }
+  // }
 }
