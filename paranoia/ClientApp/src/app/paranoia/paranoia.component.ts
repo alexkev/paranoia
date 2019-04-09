@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class ParanoiaComponent implements OnInit {
   public paranoiaArray: Paranoia[];
   subscription: Subscription;
-   
+  checked: boolean = false;
 
   constructor(private paranoiaService: ParanoiaService) { }
 
@@ -55,7 +55,14 @@ export class ParanoiaComponent implements OnInit {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
   }
 
-  like() {
-    
+  like(id: any) {
+    console.log('clicked' + ' ' + id)
+    if (!this.checked) {
+      $('#' + id).attr('src', '../../assets/thumb-blue.svg');
+      this.checked = true;
+    } else {
+      $('#' + id).attr('src', '../../assets/Vector.svg');
+      this.checked = false;
+    }
   }
 }
