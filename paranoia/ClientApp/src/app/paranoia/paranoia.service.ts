@@ -40,6 +40,17 @@ export class ParanoiaService {
     return null;
   }
 
+  getMaxId(): number {
+    let maxId = 0;
+    for (const paranoia of this.paranoiaArray) {
+      const currentId = parseInt(paranoia.id, 10);
+      if (currentId > maxId) {
+        maxId = currentId;
+      }
+    }
+    return maxId;
+  }
+
   addParanoia(newParanoia: Paranoia) {
     if (!newParanoia) {
       return;
@@ -54,7 +65,6 @@ export class ParanoiaService {
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
       strParanoia,
-   // newParanoia,
       { headers: headers })
 
       .subscribe(
