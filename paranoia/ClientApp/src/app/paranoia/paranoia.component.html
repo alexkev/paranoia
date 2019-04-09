@@ -9,14 +9,14 @@
     <div class="card panel panel-default" id="istyle">
       <form class="panel-body" action="/" (ngSubmit)="onSubmit(f)" #f="ngForm" method="post">
         <fieldset>
-          <input type="text"
+          <textarea type="text"
                  id="question"
                  name="question"
                  value="submitQuestion"
                  placeholder="Enter Question"
                  ngModel
                  #question="ngModel"
-                 required />
+                 required ></textarea>
           <input id="add" class="btn btn-success" [disabled]="!f.valid" type="submit" />
         </fieldset>
       </form>

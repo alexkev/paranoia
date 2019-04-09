@@ -6,8 +6,6 @@ import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-paranoia',
   templateUrl: './paranoia.component.html',
@@ -18,15 +16,13 @@ export class ParanoiaComponent implements OnInit {
   originalParanoia: Paranoia;
   subscription: Subscription;
   editMode = false;
+  checked: boolean = false;
 
    
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router,
     private route: ActivatedRoute) { }
-  checked: boolean = false;
-
-  constructor(private paranoiaService: ParanoiaService) { }
 
   ngOnInit() {
     // Coin flip
