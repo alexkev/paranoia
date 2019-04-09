@@ -16,17 +16,14 @@ export class ParanoiaComponent implements OnInit {
   originalParanoia: Paranoia;
   subscription: Subscription;
   editMode = false;
-  id: string;
   checked: boolean = false;
+  id: string;
 
    
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router,
     private route: ActivatedRoute) { }
-  checked: boolean = false;
-
-  constructor(private paranoiaService: ParanoiaService) { }
 
   ngOnInit() {
     // Coin flip
