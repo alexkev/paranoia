@@ -31,7 +31,7 @@ export class ParanoiaService {
     }, error => console.error(error));
   }
 
-  getParanoia(id: string): Paranoia {
+  getParanoia(id: number): Paranoia {
     for (const paranoia of this.paranoiaArray) {
       if (paranoia.id === id) {
         return paranoia;
@@ -43,7 +43,7 @@ export class ParanoiaService {
   getMaxId(): number {
     let maxId = 0;
     for (const paranoia of this.paranoiaArray) {
-      const currentId = parseInt(paranoia.id, 10);
+      const currentId = paranoia.id;
       if (currentId > maxId) {
         maxId = currentId;
       }
@@ -55,22 +55,17 @@ export class ParanoiaService {
     if (!newParanoia) {
       return;
     }
-    newParanoia.id = '';
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
 
-     const strParanoia = JSON.stringify(newParanoia);
+     //const strParanoia = JSON.stringify(newParanoia);
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
-      strParanoia,
-      { headers: headers })
+      newParanoia)
 
       .subscribe(
         (res) => {
-          this.paranoiaArray = res.paranoia;
-          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+       //   this.paranoiaArray = res.paranoia;
+         // this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
         });
   }
 
@@ -84,29 +79,17 @@ export class ParanoiaService {
       return;
     }
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
 
-    const strParanoia = JSON.stringify(newParanoia);
+    //const strParanoia = JSON.stringify(newParanoia);
 
     this.http.patch<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias' + originalParanoia.id
-      , strParanoia
-      , { headers: headers })
-      // .map(
-      //   (res: Response) => {
-      //     return res.json().obj;
-      //   })
+      , newParanoia)
+    
       .subscribe(
         (responseData) => {
-          this.paranoiaArray = responseData.paranoias;
-          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+         // this.paranoiaArray = responseData.paranoias;
+        //  this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
         });
   }
-
-  // errorHandler(error: Response) {
-  //   console.log(error);
-  //   return Observable.throw(error);
-  // }  
 
 }
