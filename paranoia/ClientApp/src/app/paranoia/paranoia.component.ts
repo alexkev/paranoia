@@ -12,14 +12,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./paranoia.component.css']
 })
 export class ParanoiaComponent implements OnInit {
+  // GET : these gets all of the data
   public paranoiaArray: Paranoia[];
   subscription: Subscription;
 
+  // View : this is the item of the array past through the ngFor Loop
   paranoia: Paranoia;
   
+  // POST : 
   originalParanoia: Paranoia;
   editMode = false;
-  // checked: boolean = false;
+
 
    
 
@@ -74,17 +77,4 @@ export class ParanoiaComponent implements OnInit {
   random() {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
   }
-
-  // like(id: any) {
-  //   console.log('clicked' + ' ' + id)
-  //   if (!this.checked) {
-  //     $('#' + id).attr('src', '../../assets/thumb-blue.svg');
-  //     this.checked = true;
-  //     this.paranoiaService.updateLike(id, 1);
-  //   } else {
-  //     $('#' + id).attr('src', '../../assets/Vector.svg');
-  //     this.checked = false;
-  //     this.paranoiaService.updateLike(id, -1);
-  //   }
-  // }
 }

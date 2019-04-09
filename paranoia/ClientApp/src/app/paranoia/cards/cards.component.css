@@ -29,3 +29,7 @@
   position: relative;
   bottom: 2px;
 }
+
+.panel-body {
+  width: 100%;
+}
