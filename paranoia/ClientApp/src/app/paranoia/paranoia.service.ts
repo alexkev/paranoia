@@ -50,17 +50,47 @@ export class ParanoiaService {
       'Content-Type': 'application/json'
     });
 
-   // const strParanoia = JSON.stringify(newParanoia);
+     const strParanoia = JSON.stringify(newParanoia);
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
-     // strParanoia,
-    newParanoia,
+      strParanoia,
+   // newParanoia,
       { headers: headers })
 
       .subscribe(
         (res) => {
-         // this.paranoiaArray = res.paranoia;
-         // this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+          this.paranoiaArray = res.paranoia;
+          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+        });
+  }
+
+  updateParanoia(originalParanoia: Paranoia, newParanoia: Paranoia) {
+    if (!originalParanoia || !newParanoia) {
+      return;
+    }
+
+    const pos = this.paranoiaArray.indexOf(originalParanoia);
+    if (pos < 0) {
+      return;
+    }
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    const strParanoia = JSON.stringify(newParanoia);
+
+    this.http.patch<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias' + originalParanoia.id
+      , strParanoia
+      , { headers: headers })
+      // .map(
+      //   (res: Response) => {
+      //     return res.json().obj;
+      //   })
+      .subscribe(
+        (responseData) => {
+          this.paranoiaArray = responseData.paranoias;
+          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
         });
   }
 

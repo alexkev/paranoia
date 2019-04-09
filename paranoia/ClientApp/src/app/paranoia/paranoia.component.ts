@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Paranoia } from './paranoia.model';
 import * as $ from 'jquery';
-import {ParanoiaService } from './paranoia.service';
+import { ParanoiaService } from './paranoia.service';
+import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 
 @Component({
@@ -12,7 +15,15 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ParanoiaComponent implements OnInit {
   public paranoiaArray: Paranoia[];
+  originalParanoia: Paranoia;
   subscription: Subscription;
+  editMode = false;
+
+   
+
+  constructor(private paranoiaService: ParanoiaService,
+    private router: Router,
+    private route: ActivatedRoute) { }
   checked: boolean = false;
 
   constructor(private paranoiaService: ParanoiaService) { }
@@ -45,6 +56,17 @@ export class ParanoiaComponent implements OnInit {
       this.paranoiaService.getParanoias();
 
 
+  }
+
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const newParanoia = new Paranoia(value.id, value.question, value.like);
+    if (this.editMode === true) {
+      this.paranoiaService.updateParanoia(this.originalParanoia, newParanoia);
+    } else {
+      this.paranoiaService.addParanoia(newParanoia);
+    }
+    this.router.navigate(['/paranoia']);
   }
 
   mostPop() {
