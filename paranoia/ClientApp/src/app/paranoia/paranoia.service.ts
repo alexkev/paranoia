@@ -82,7 +82,7 @@ export class ParanoiaService {
 
     //const strParanoia = JSON.stringify(newParanoia);
 
-    this.http.patch<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias' + originalParanoia.id
+    this.http.put<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias/' + originalParanoia.id
       , newParanoia)
     
       .subscribe(
@@ -90,6 +90,14 @@ export class ParanoiaService {
          // this.paranoiaArray = responseData.paranoias;
         //  this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
         });
+  }
+
+  updateLike(id: number, likes: number) {
+    let pararnoiaItem = this.getParanoia(id);
+
+    pararnoiaItem.like += likes;
+
+    this.updateParanoia(this.getParanoia(id), pararnoiaItem);
   }
 
 }

@@ -80,9 +80,12 @@ export class ParanoiaComponent implements OnInit {
     if (!this.checked) {
       $('#' + id).attr('src', '../../assets/thumb-blue.svg');
       this.checked = true;
+      this.paranoiaService.updateLike(id, 1);
+      
     } else {
       $('#' + id).attr('src', '../../assets/Vector.svg');
       this.checked = false;
+      this.paranoiaService.updateLike(id, -1);
     }
   }
 }

@@ -86,8 +86,15 @@ body {
   grid-column: 2 / 3;
   grid-row: 2 / 5;
   margin: 50px 20px 20px 20px;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+}
+
+@media only screen and (min-width: 600px) {
+  #coin {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .side-a, .side-b {
