@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class ParanoiaComponent implements OnInit {
   public paranoiaArray: Paranoia[];
   subscription: Subscription;
+   
 
   constructor(private paranoiaService: ParanoiaService) { }
 
@@ -42,6 +43,8 @@ export class ParanoiaComponent implements OnInit {
         }
       );
       this.paranoiaService.getParanoias();
+
+
   }
 
   mostPop() {
@@ -52,5 +55,7 @@ export class ParanoiaComponent implements OnInit {
     this.paranoiaArray.sort((a, b) => {return 0.5 - Math.random()});
   }
 
-  like() {}
+  like() {
+    
+  }
 }

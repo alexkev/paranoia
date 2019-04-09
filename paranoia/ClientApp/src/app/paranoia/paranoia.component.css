@@ -165,6 +165,14 @@ textarea {
   padding: 0px 12px;
 }
 
+.notliked {
+  content: url("../../assets/Vector.svg");
+}
+
+.liked {
+  content: url("../../assets/thumb-blue.svg");         
+}
+
 #like>p {
   position: relative;
   bottom: 2px;

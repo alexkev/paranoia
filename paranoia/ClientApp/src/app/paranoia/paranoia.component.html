@@ -29,14 +29,14 @@
       <div class="card panel panel-default">
         <div class="panel-body">
             <p><i>{{paranoia.question}}</i></p>
-            <div id="like">
-              <!-- <img onclick="this.src="../../assets/Vector.svg"" class="img-resposive" src="../../assets/Vector.svg" alt=""> -->
-              <div (click)="like()">
-                <img id="notliked" src="../../assets/Vector.svg" alt="">
-                <img id="liked" src="../../assets/thumb-blue.svg" alt="">
+            <ng-container >
+              <div id="like">
+                <img onclick="this.src='../../assets/thumb-blue.svg'" src="../../assets/Vector.svg" alt="">
+                <!-- <img (click)="like()" [src]="../../assets/Vector.svg" alt=""> -->
+                <!-- <p>{{liked}}</p> -->
+                <p><strong>{{paranoia.like}}</strong></p>
               </div>
-              <p><strong>{{paranoia.like}}</strong></p>
-            </div>
+            </ng-container>
         </div>
       </div>
     </ng-container>   
