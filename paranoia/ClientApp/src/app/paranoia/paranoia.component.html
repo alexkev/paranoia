@@ -38,9 +38,7 @@
             <p><i>{{paranoia.question}}</i></p>
             <ng-container >
               <div id="like">
-                <img onclick="this.src='../../assets/thumb-blue.svg'" src="../../assets/Vector.svg" alt="">
-                <!-- <img (click)="like()" [src]="../../assets/Vector.svg" alt=""> -->
-                <!-- <p>{{liked}}</p> -->
+                <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../assets/Vector.svg" alt="">
                 <p><strong>{{paranoia.like}}</strong></p>
               </div>
             </ng-container>
