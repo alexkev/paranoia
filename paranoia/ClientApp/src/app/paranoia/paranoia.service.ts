@@ -31,6 +31,39 @@ export class ParanoiaService {
     }, error => console.error(error));
   }
 
+  getParanoia(id: string): Paranoia {
+    for (const paranoia of this.paranoiaArray) {
+      if (paranoia.id === id) {
+        return paranoia;
+      }
+    }
+    return null;
+  }
+
+  addParanoia(newParanoia: Paranoia) {
+    if (!newParanoia) {
+      return;
+    }
+    newParanoia.id = '';
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+   // const strParanoia = JSON.stringify(newParanoia);
+
+    this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
+     // strParanoia,
+    newParanoia,
+      { headers: headers })
+
+      .subscribe(
+        (res) => {
+         // this.paranoiaArray = res.paranoia;
+         // this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+        });
+  }
+
   // errorHandler(error: Response) {
   //   console.log(error);
   //   return Observable.throw(error);

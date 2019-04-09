@@ -9,8 +9,8 @@
     <div class="card panel panel-default" id="istyle">
       <form class="panel-body" action="/" method="post">
         <fieldset>
-          <textarea type="text" name="name" value="">Enter Question</textarea>
-          <button id="add" class="btn btn-success" type="submit">Add</button>
+          <input type="text" name="question" value="Enter Question" required />
+          <input (click)="addParanoia()" id="add" class="btn btn-success" type="submit" />
         </fieldset>
       </form>
     </div>
