@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ParanoiaService } from '../paranoia.service';
 import { Paranoia } from '../paranoia.model';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-cards',
