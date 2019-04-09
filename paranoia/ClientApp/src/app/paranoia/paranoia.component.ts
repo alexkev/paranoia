@@ -18,6 +18,7 @@ export class ParanoiaComponent implements OnInit {
   originalParanoia: Paranoia;
   subscription: Subscription;
   editMode = false;
+  id: string;
 
    
 
@@ -26,6 +27,7 @@ export class ParanoiaComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+
     // Coin flip
       $('#coin').on('click', function () {
         const flipResult = Math.random();
@@ -57,7 +59,7 @@ export class ParanoiaComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newParanoia = new Paranoia(value.id, value.question, value.like);
+    const newParanoia = new Paranoia(this.paranoiaService.getMaxId().toString(), value.question, value.like);
     if (this.editMode === true) {
       this.paranoiaService.updateParanoia(this.originalParanoia, newParanoia);
     } else {
