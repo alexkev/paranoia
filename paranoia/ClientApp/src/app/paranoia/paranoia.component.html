@@ -7,10 +7,17 @@
 
   <div id="input">
     <div class="card panel panel-default" id="istyle">
-      <form class="panel-body" action="/" method="post">
+      <form class="panel-body" action="/" (ngSubmit)="onSubmit(f)" #f="ngForm" method="post">
         <fieldset>
-          <input type="text" name="question" value="Enter Question" required />
-          <input (click)="addParanoia()" id="add" class="btn btn-success" type="submit" />
+          <input type="text"
+                 id="question"
+                 name="question"
+                 value="submitQuestion"
+                 placeholder="Enter Question"
+                 ngModel
+                 #question="ngModel"
+                 required />
+          <input id="add" class="btn btn-success" [disabled]="!f.valid" type="submit" />
         </fieldset>
       </form>
     </div>
