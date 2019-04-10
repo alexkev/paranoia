@@ -1,4 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, EventEmitter } from '@angular/core';
+
 // import { Http, Response } from '@angular/http';
 // import { Observable } from 'rxjs/Observable';
 // import { Router } from '@angular/router';
@@ -15,6 +16,8 @@ import { Subject } from 'rxjs/Subject';
 export class ParanoiaService {
   public paranoiaArray: Paranoia[];
   public paranoia: Paranoia;
+  paranoiaSelectedEvent = new EventEmitter<Paranoia>();
+
   paranoiaListChangedEvent = new Subject<Paranoia[]>();
 
   myAppUrl: string = "";  

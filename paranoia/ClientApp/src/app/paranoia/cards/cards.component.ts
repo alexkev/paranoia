@@ -11,10 +11,18 @@ import * as $ from 'jquery';
 export class CardsComponent implements OnInit {
   @Input() paranoia: Paranoia;
   checked: boolean = false;
+  selectedParanoia: Paranoia;
+
 
   constructor(private paranoiaService: ParanoiaService) {}
 
   ngOnInit() {
+    this.paranoiaService.paranoiaSelectedEvent
+    .subscribe(
+      (paranoia: Paranoia) => {
+        this.selectedParanoia = paranoia;
+      }
+    );
   }
 
   like(id: any) {

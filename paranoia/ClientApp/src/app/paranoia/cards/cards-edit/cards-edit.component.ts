@@ -14,8 +14,7 @@ import { NgForm } from '@angular/forms';
 export class CardsEditComponent implements OnInit {
   paranoiaArray: Paranoia[];
   originalParanoia: Paranoia;
-  @Input() paranoia: Paranoia;
-  editMode = false;
+  paranoia: Paranoia;
   id: number;
 
 
@@ -28,17 +27,17 @@ export class CardsEditComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
-          if (this.id === null || this.id === undefined) {
-            this.editMode = false;
-            return;
-          }
+ 
           this.originalParanoia = this.paranoiaService.getParanoia(this.id);
-          if (this.originalParanoia === undefined || this.originalParanoia === null) {
-            this.editMode = false;
-            return;
-          }
-          this.editMode = true;
+  
         });
+  }
+
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const newParanoia = new Paranoia(value.id, value.question, value.like);
+    this.paranoiaService.updateParanoia(this.originalParanoia, newParanoia);
+    this.paranoiaService.getParanoias();
   }
 
 
