@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ParanoiaService } from '../../paranoia.service';
 import { Paranoia } from '../../paranoia.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -14,6 +14,7 @@ import { NgForm } from '@angular/forms';
 export class CardsEditComponent implements OnInit {
   paranoiaArray: Paranoia[];
   originalParanoia: Paranoia;
+  @Input() paranoia: Paranoia;
   editMode = false;
   id: number;
 
