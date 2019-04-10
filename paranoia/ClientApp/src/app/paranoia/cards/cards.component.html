@@ -1,9 +1,12 @@
 <div class="card panel panel-default">
   <div class="panel-body">
     <p><i>{{paranoia.question}}</i></p>
-    <div id="like">
-      <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../../assets/Vector.svg" alt="">
-      <p><strong>{{paranoia.like}}</strong></p>
+    <div class="tools">
+      <img class="trash" src="../../../assets/trash.svg" alt="">
+      <div id="like">
+        <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../../assets/Vector.svg" alt="">
+        <p><strong>{{paranoia.like}}</strong></p>
+      </div>
     </div>
   </div>
 </div>

@@ -13,12 +13,22 @@
   }
 }
 
+.tools {
+  margin-top: 55px;
+}
+
+.trash {
+  float: left;
+  /* margin-top: 15px; */
+}
+
+
 #like {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   float: right;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 #like>img {
