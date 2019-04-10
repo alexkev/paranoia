@@ -47,7 +47,7 @@ export class ParanoiaComponent implements OnInit {
     this.paranoiaService.getParanoias();
     this.arraySubscript();
 
-    this.newest();
+    
   }
 
   arraySubscript() {
@@ -56,6 +56,7 @@ export class ParanoiaComponent implements OnInit {
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
           // console.log(this.paranoiaArray);
+          this.newest();
         }
       );
   }
@@ -84,7 +85,7 @@ export class ParanoiaComponent implements OnInit {
   }
 
   newest(){
-    this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
+    return this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
   }
   oldest(){
     this.paranoiaArray.sort((a, b) => (a.id < b.id) ? -1 : 1);;
