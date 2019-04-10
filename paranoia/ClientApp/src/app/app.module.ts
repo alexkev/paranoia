@@ -35,7 +35,7 @@ import { CardsEditComponent } from './paranoia/cards/cards-edit/cards-edit.compo
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'paranoia', component: ParanoiaComponent },
-      { path: 'edit', component: CardsEditComponent}
+      { path: 'paranoia/edit', component: CardsEditComponent}
     ])
   ],
   providers: [ParanoiaService],
