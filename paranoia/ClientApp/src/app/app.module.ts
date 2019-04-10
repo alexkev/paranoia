@@ -13,6 +13,7 @@ import { ParanoiaComponent } from './paranoia/paranoia.component';
 import { CardsComponent } from './paranoia/cards/cards.component';
 
 import { ParanoiaService } from './paranoia/paranoia.service';
+import { CardsEditComponent } from './paranoia/cards/cards-edit/cards-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ParanoiaService } from './paranoia/paranoia.service';
     CounterComponent,
     FetchDataComponent,
     ParanoiaComponent,
-    CardsComponent
+    CardsComponent,
+    CardsEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,6 +35,7 @@ import { ParanoiaService } from './paranoia/paranoia.service';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'paranoia', component: ParanoiaComponent },
+      { path: 'edit', component: CardsEditComponent}
     ])
   ],
   providers: [ParanoiaService],

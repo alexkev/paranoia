@@ -85,7 +85,7 @@ export class ParanoiaComponent implements OnInit {
   }
 
   newest(){
-    return this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
+    this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
   }
   oldest(){
     this.paranoiaArray.sort((a, b) => (a.id < b.id) ? -1 : 1);;
