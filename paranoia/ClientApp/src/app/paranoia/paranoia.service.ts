@@ -14,6 +14,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class ParanoiaService {
   public paranoiaArray: Paranoia[];
+  public paranoia: Paranoia;
   paranoiaListChangedEvent = new Subject<Paranoia[]>();
 
   myAppUrl: string = "";  
