@@ -5,6 +5,8 @@
       <img id="trash" (click)="onDelete()" class="trash" src="../../../assets/trash.svg" alt="">
       <img id="edit" [routerLink]="['edit']" class="trash" src="../../../assets/edit.svg" alt="">
 
+      <router-outlet></router-outlet>
+
       <div id="like">
         <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../../assets/Vector.svg" alt="">
         <p><strong>{{paranoia.like}}</strong></p>
