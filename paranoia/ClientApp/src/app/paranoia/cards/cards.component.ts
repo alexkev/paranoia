@@ -29,4 +29,8 @@ export class CardsComponent implements OnInit {
       this.paranoiaService.updateLike(id, -1);
     }
   }
+
+  onDelete() {
+    this.paranoiaService.deleteParanoia(this.paranoia);
+  }
 }

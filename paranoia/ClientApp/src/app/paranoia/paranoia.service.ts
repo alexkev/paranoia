@@ -100,4 +100,17 @@ export class ParanoiaService {
     this.updateParanoia(this.getParanoia(id), paranoiaItem);
   }
 
+  deleteParanoia(paranoia: Paranoia) {
+    if (paranoia === null || paranoia === undefined) {
+      return;
+    }
+
+    this.http.delete<{ message: string, paranoias: Paranoia[] }>((this.myAppUrl + 'api/paranoias/' + paranoia.id))
+      .subscribe(
+        (responseData) => {
+          this.paranoiaArray = responseData.paranoias;
+          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+        });
+  }
+
 }
