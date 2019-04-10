@@ -18,7 +18,12 @@
 }
 
 .trash {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 5px;
   float: left;
+
   /* margin-top: 15px; */
 }
 
