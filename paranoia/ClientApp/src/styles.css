@@ -1,28 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-.center {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
 
-h1, h2 {
+h1,
+h2 {
   padding: .5em;
-}
-
-.center>picture>img {
-  width: fit-content;
-}
-
-.pic {
-  width:100%;
 }
 
 p {
   font-size: 18px;
 }
 
-.instruct {
-  margin: 20px;
+@media (max-width: 768px) {
+  .col-sm-9 {
+    width: 100% !important;
+    padding: 0px !important;
+  }
 }
 
 /* adjustment to navbar bootstrap */
@@ -30,5 +21,6 @@ p {
   .col-sm-9 {
     width: 80%;
     float: right;
+    padding: 0px;
   }
 }

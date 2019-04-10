@@ -1,0 +1,30 @@
+.header {
+  background-color:#222222;
+  width: 100%;
+}
+
+img {
+    padding-top: 10px;
+    display: block;
+    margin: auto;
+}
+
+@media (min-width: 600px) {
+  .header {
+    height: 300px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.center>picture>img {
+  width: fit-content;
+}
+
+.instruct {
+  margin: 40px;
+}
