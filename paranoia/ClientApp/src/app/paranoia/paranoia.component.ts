@@ -44,16 +44,28 @@ export class ParanoiaComponent implements OnInit {
 
     // GET Array of Paranoia
     // this.paranoiaArray = this.paranoiaService.;
+    this.paranoiaService.getParanoias();
+    this.arraySubscript();
+    // this.subscription = this.paranoiaService.paranoiaListChangedEvent
+    //   .subscribe(
+    //     (paranoiaArray: Paranoia[]) => {
+    //       this.paranoiaArray = paranoiaArray;
+    //       this.paranoiaArray.reverse();
+    //       console.log(this.paranoiaArray);
+    //     }
+    //   );
+      
+  }
+
+  arraySubscript() {
     this.subscription = this.paranoiaService.paranoiaListChangedEvent
       .subscribe(
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
-          this.paranoiaArray.reverse();
+          this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
           console.log(this.paranoiaArray);
         }
       );
-      
-    this.paranoiaService.getParanoias();
   }
 
   onSubmit(form: NgForm) {
@@ -64,8 +76,9 @@ export class ParanoiaComponent implements OnInit {
     } else {
       this.paranoiaService.addParanoia(newParanoia);
     }
-    this.router.navigate(['/paranoia']);
     this.paranoiaService.getParanoias();
+    this.arraySubscript();
+    // this.router.navigate(['/paranoia']);
     form.reset();
   }
 

@@ -109,7 +109,7 @@ export class ParanoiaService {
       .subscribe(
         (responseData) => {
           this.paranoiaArray = responseData.paranoias;
-          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+          this.paranoiaListChangedEvent.next(this.paranoiaArray);
         });
   }
 
