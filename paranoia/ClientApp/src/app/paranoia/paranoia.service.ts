@@ -58,7 +58,6 @@ export class ParanoiaService {
     }
 
 
-     //const strParanoia = JSON.stringify(newParanoia);
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
       newParanoia)
@@ -79,9 +78,6 @@ export class ParanoiaService {
     if (pos < 0) {
       return;
     }
-
-
-    //const strParanoia = JSON.stringify(newParanoia);
 
     this.http.put<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias/' + originalParanoia.id
       , newParanoia)
@@ -109,8 +105,8 @@ export class ParanoiaService {
     this.http.delete<{ message: string, paranoias: Paranoia[] }>((this.myAppUrl + 'api/paranoias/' + paranoia.id))
       .subscribe(
         (responseData) => {
-          this.paranoiaArray = responseData.paranoias;
-          this.paranoiaListChangedEvent.next(this.paranoiaArray);
+         // this.paranoiaArray = responseData.paranoias;
+        //  this.paranoiaListChangedEvent.next(this.paranoiaArray);
         });
   }
 
