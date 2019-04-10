@@ -48,7 +48,7 @@ export class ParanoiaComponent implements OnInit {
       .subscribe(
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
-          this.paranoiaArray.reverse();
+         // this.paranoiaArray.reverse();
           console.log(this.paranoiaArray);
         }
       );

@@ -43,3 +43,8 @@
 .panel-body {
   width: 100%;
 }
+
+#trash:hover {
+background-color: red;
+
+}
