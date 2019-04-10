@@ -24,3 +24,11 @@ p {
 .instruct {
   margin: 20px;
 }
+
+/* adjustment to navbar bootstrap */
+@media (min-width: 768px) {
+  .col-sm-9 {
+    width: 80%;
+    float: right;
+  }
+}
