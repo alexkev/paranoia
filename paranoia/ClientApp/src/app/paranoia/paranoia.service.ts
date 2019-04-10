@@ -28,7 +28,8 @@ export class ParanoiaService {
       .subscribe(result => {
         this.paranoiaArray = result;
         this.paranoiaListChangedEvent.next(this.paranoiaArray.slice())
-        console.log(result);
+        console.log(this.paranoiaListChangedEvent);
+        // this.paranoiaListChangedEvent.next(result)
     }, error => console.error(error));
   }
 
@@ -56,8 +57,6 @@ export class ParanoiaService {
     if (!newParanoia) {
       return;
     }
-
-
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
       newParanoia)
@@ -105,9 +104,8 @@ export class ParanoiaService {
     this.http.delete<{ message: string, paranoias: Paranoia[] }>((this.myAppUrl + 'api/paranoias/' + paranoia.id))
       .subscribe(
         (responseData) => {
-         // this.paranoiaArray = responseData.paranoias;
+        //  this.paranoiaArray = responseData.paranoias;
         //  this.paranoiaListChangedEvent.next(this.paranoiaArray);
-        });
+      });
   }
-
 }

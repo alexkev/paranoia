@@ -32,5 +32,6 @@ export class CardsComponent implements OnInit {
 
   onDelete() {
     this.paranoiaService.deleteParanoia(this.paranoia);
+    this.paranoiaService.getParanoias();
   }
 }
