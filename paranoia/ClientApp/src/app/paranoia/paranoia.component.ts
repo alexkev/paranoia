@@ -63,7 +63,6 @@ export class ParanoiaComponent implements OnInit {
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
           this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
-         // console.log(this.paranoiaArray);
         }
       );
   }
@@ -78,7 +77,6 @@ export class ParanoiaComponent implements OnInit {
     }
     this.paranoiaService.getParanoias();
     this.arraySubscript();
-    // this.router.navigate(['/paranoia']);
     form.reset();
   }
 
