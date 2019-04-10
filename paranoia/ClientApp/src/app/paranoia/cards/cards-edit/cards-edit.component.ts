@@ -4,8 +4,6 @@ import { Paranoia } from '../../paranoia.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-
-
 @Component({
   selector: 'app-cards-edit',
   templateUrl: './cards-edit.component.html',
@@ -39,6 +37,8 @@ export class CardsEditComponent implements OnInit {
           }
           this.editMode = true;
         });
+
+        console.log(this.paranoia);
   }
 
 
