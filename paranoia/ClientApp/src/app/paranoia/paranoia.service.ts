@@ -11,6 +11,7 @@ import { Injectable, Inject, EventEmitter } from '@angular/core';
 import { Paranoia } from './paranoia.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable()
 export class ParanoiaService {
@@ -36,13 +37,14 @@ export class ParanoiaService {
     }, error => console.error(error));
   }
 
-  getParanoia(id: number): Paranoia {
-    for (const paranoia of this.paranoiaArray) {
-      if (paranoia.id === id) {
-        return paranoia;
-      }
-    }
-    return null;
+  getParanoia(id: number) {
+    return this.http.get<Paranoia>(this.myAppUrl + 'api/paranoias/' + id);
+    // for (const paranoia of this.paranoiaArray) {
+    //   if (paranoia.id === id) {
+    //     return paranoia;
+    //   }
+    // }
+    // return null;
   }
 
   getMaxId(): number {

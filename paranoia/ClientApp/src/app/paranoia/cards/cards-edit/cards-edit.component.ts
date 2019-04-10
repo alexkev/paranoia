@@ -11,10 +11,9 @@ import { NgForm } from '@angular/forms';
 })
 export class CardsEditComponent implements OnInit {
   paranoiaArray: Paranoia[];
-  originalParanoia: Paranoia;
-  paranoia: Paranoia;
+  // originalParanoia: Paranoia;
+  @Input() paranoia: Paranoia;
   id: number;
-
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router,
@@ -26,17 +25,21 @@ export class CardsEditComponent implements OnInit {
         (params: Params) => {
           this.id = params['id'];
  
-          this.originalParanoia = this.paranoiaService.getParanoia(this.id);
-  
+          this.paranoiaService.getParanoia(this.id)
+            .subscribe(
+              (paranoia: Paranoia) => {
+                this.paranoia = paranoia;
+                console.log(this.paranoia);
+              }
+            )
         });
-
-        console.log(this.paranoia);
   }
 
   onSubmit(form: NgForm) {
     const value = form.value;
     const newParanoia = new Paranoia(value.id, value.question, value.like);
-    this.paranoiaService.updateParanoia(this.originalParanoia, newParanoia);
+    this.paranoiaService.updateParanoia(this.paranoia, newParanoia);
+    this.router.navigate(['/paranoia']);
     this.paranoiaService.getParanoias();
   }
 

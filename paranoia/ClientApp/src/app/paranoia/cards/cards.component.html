@@ -2,13 +2,13 @@
   <div class="panel-body">
     <p><i>{{paranoia.question}}</i></p>
     <div class="tools">
-      <img id="trash" (click)="onDelete()" class="trash" src="../../../assets/trash.svg" alt="">
-      <img id="edit" [routerLink]="[':id/edit']" class="trash" src="../../../assets/edit.svg" alt="">
+      <img id="trash" (click)="onDelete(paranoia)" class="trash" src="../../../assets/trash.svg" alt="">
+      <img id="edit" [routerLink]="['edit', paranoia.id]" class="trash" src="../../../assets/edit.svg" alt="">
 
       <router-outlet></router-outlet>
 
       <div id="like">
-        <img (click)="like(paranoia.id)" id="{{paranoia.id}}" src="../../../assets/Vector.svg" alt="">
+        <img (click)="like(paranoia.id)" src="../../../assets/Vector.svg" alt="">
         <p><strong>{{paranoia.like}}</strong></p>
       </div>
     </div>
