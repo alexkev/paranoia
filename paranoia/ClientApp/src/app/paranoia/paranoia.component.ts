@@ -46,15 +46,8 @@ export class ParanoiaComponent implements OnInit {
     // this.paranoiaArray = this.paranoiaService.;
     this.paranoiaService.getParanoias();
     this.arraySubscript();
-    // this.subscription = this.paranoiaService.paranoiaListChangedEvent
-    //   .subscribe(
-    //     (paranoiaArray: Paranoia[]) => {
-    //       this.paranoiaArray = paranoiaArray;
-    //       this.paranoiaArray.reverse();
-    //       console.log(this.paranoiaArray);
-    //     }
-    //   );
-      
+
+    this.newest();
   }
 
   arraySubscript() {
@@ -62,7 +55,11 @@ export class ParanoiaComponent implements OnInit {
       .subscribe(
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
+<<<<<<< HEAD
           this.paranoiaArray.sort((a, b) => (a.id > b.id) ? -1 : 1);
+=======
+          // console.log(this.paranoiaArray);
+>>>>>>> 9a07a92d0864270d202509e655710bfa05efb2af
         }
       );
   }
@@ -77,6 +74,11 @@ export class ParanoiaComponent implements OnInit {
     }
     this.paranoiaService.getParanoias();
     this.arraySubscript();
+<<<<<<< HEAD
+=======
+    this.newest();
+    // this.router.navigate(['/paranoia']);
+>>>>>>> 9a07a92d0864270d202509e655710bfa05efb2af
     form.reset();
   }
 
