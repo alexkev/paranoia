@@ -34,11 +34,13 @@ import { CardsEditComponent } from './paranoia/cards/cards-edit/cards-edit.compo
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'paranoia', component: ParanoiaComponent },
-      { path: 'paranoia/edit', component: CardsEditComponent}
+      { path: 'paranoia', component: ParanoiaComponent, children: [
+          { path: ':id/edit', component: CardsEditComponent }
+      ] }
     ])
-  ],
-  providers: [ParanoiaService],
-  bootstrap: [AppComponent]
+    ],
+    providers: [ParanoiaService],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }
