@@ -4,9 +4,6 @@
     <div class="tools">
       <img id="trash" (click)="onDelete(paranoia)" class="trash" src="../../../assets/trash.svg" alt="">
       <img id="edit" [routerLink]="['edit', paranoia.id]" class="trash" src="../../../assets/edit.svg" alt="">
-
-      <router-outlet></router-outlet>
-
       <div id="like">
         <img (click)="like(paranoia.id)" src="../../../assets/Vector.svg" alt="">
         <p><strong>{{paranoia.like}}</strong></p>

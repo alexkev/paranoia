@@ -43,7 +43,9 @@
   </div>
 
 
+  
   <div id="cards">
+    <router-outlet></router-outlet>
     <app-cards *ngFor="let paranoia of paranoiaArray" [paranoia]="paranoia">
     </app-cards>
   </div>
