@@ -47,6 +47,15 @@ export class ParanoiaService {
     // return null;
   }
 
+  getParanoiaArray(id: number) {
+    for (const paranoia of this.paranoiaArray) {
+      if (paranoia.id === id) {
+        return paranoia;
+      }
+    }
+    return null;
+  }
+
   getMaxId(): number {
     let maxId = 0;
     for (const paranoia of this.paranoiaArray) {
@@ -94,11 +103,11 @@ export class ParanoiaService {
   }
 
   updateLike(id: number, likes: number) {
-    let paranoiaItem = this.getParanoia(id);
+    let paranoiaItem = this.getParanoiaArray(id);
 
     paranoiaItem.like += likes;
 
-    this.updateParanoia(this.getParanoia(id), paranoiaItem);
+    this.updateParanoia(this.getParanoiaArray(id), paranoiaItem);
   }
 
   deleteParanoia(paranoia: Paranoia) {
