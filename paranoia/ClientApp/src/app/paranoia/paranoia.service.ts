@@ -83,15 +83,6 @@ export class ParanoiaService {
   }
 
   updateParanoia(originalParanoia: Paranoia, newParanoia: Paranoia) {
-    if (!originalParanoia || !newParanoia) {
-      return;
-    }
-
-    const pos = this.paranoiaArray.indexOf(originalParanoia);
-    if (pos < 0) {
-      return;
-    }
-
     this.http.put<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias/' + originalParanoia.id
       , newParanoia)
     

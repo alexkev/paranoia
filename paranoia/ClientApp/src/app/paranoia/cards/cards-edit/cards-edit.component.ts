@@ -37,8 +37,11 @@ export class CardsEditComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newParanoia = new Paranoia(value.id, value.question, value.like);
+    console.log(value);
+    const newParanoia = new Paranoia(this.paranoia.id, value.question, this.paranoia.like);
     this.paranoiaService.updateParanoia(this.paranoia, newParanoia);
+    console.log(this.paranoia);
+    console.log(newParanoia);
     this.router.navigate(['/paranoia']);
     this.paranoiaService.getParanoias();
   }
