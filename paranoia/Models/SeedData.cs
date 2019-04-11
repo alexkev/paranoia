@@ -24,6 +24,26 @@ namespace paranoia.Models
                     {
                         Question = "Who is the least likely to become President?",
                         Like = 5
+                    },
+                    new Paranoia
+                    {
+                        Question = "Who would be the best villain?",
+                        Like = 3
+                    },
+                    new Paranoia
+                    {
+                        Question = "Who would be the most likely to rob a bank?",
+                        Like = 2
+                    },
+                    new Paranoia
+                    {
+                        Question = "Who would be most likely to leave the oven on and burn down the house",
+                        Like = 10
+                    },
+                    new Paranoia
+                    {
+                        Question = "If you had to sell someone for money, who would it be?",
+                        Like = 6
                     }
                 );
                 context.SaveChanges();
