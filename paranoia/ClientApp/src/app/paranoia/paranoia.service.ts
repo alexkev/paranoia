@@ -1,17 +1,16 @@
 import { Injectable, Inject, EventEmitter } from '@angular/core';
 
-// import { Http, Response } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
-// import { Router } from '@angular/router';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/catch';
-// import 'rxjs/add/observable/throw'; 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw'; 
 
 import { Paranoia } from './paranoia.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
-import { stringify } from '@angular/compiler/src/util';
 
 @Injectable()
 export class ParanoiaService {
@@ -30,21 +29,17 @@ export class ParanoiaService {
   getParanoias() {
     this.http.get<Paranoia[]>(this.myAppUrl + 'api/paranoias')
       .subscribe(result => {
+        console.log(result);
         this.paranoiaArray = result;
         this.paranoiaListChangedEvent.next(this.paranoiaArray.slice())
         console.log(this.paranoiaListChangedEvent);
         // this.paranoiaListChangedEvent.next(result)
+        console.log(result);
     }, error => console.error(error));
   }
 
   getParanoia(id: number) {
     return this.http.get<Paranoia>(this.myAppUrl + 'api/paranoias/' + id);
-    // for (const paranoia of this.paranoiaArray) {
-    //   if (paranoia.id === id) {
-    //     return paranoia;
-    //   }
-    // }
-    // return null;
   }
 
   getParanoiaArray(id: number) {
@@ -74,11 +69,12 @@ export class ParanoiaService {
 
     this.http.post<{message: string, paranoia: Paranoia[] }>(this.myAppUrl + 'api/paranoias',
       newParanoia)
-
       .subscribe(
         (res) => {
-       //   this.paranoiaArray = res.paranoia;
-         // this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+        console.log(res)
+        //  this.paranoiaArray = res.paranoia;
+        //  this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+        // this.paranoiaListChangedEvent.next(res.paranoia);
         });
   }
 

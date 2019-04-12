@@ -21,7 +21,7 @@ export class ParanoiaComponent implements OnInit {
   
   // POST : 
   originalParanoia: Paranoia;
-  editMode = false;
+  // editMode = false;
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router) { }
@@ -64,13 +64,9 @@ export class ParanoiaComponent implements OnInit {
   onSubmit(form: NgForm) {
     const value = form.value;
     const newParanoia = new Paranoia(value.id, value.question, value.like);
-    if (this.editMode === true) {
-      this.paranoiaService.updateParanoia(this.originalParanoia, newParanoia);
-    } else {
-      this.paranoiaService.addParanoia(newParanoia);
-    }
-    this.paranoiaService.getParanoias();
+    this.paranoiaService.addParanoia(newParanoia);
     this.arraySubscript();
+    this.paranoiaService.getParanoias();
     this.newest();
     // this.router.navigate(['/paranoia']);
     form.reset();
