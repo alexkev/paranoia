@@ -9,7 +9,6 @@ export class ParanoiaService {
   public paranoiaArray: Paranoia[];
   public paranoia: Paranoia;
   paranoiaSelectedEvent = new EventEmitter<Paranoia>();
-
   paranoiaListChangedEvent = new Subject<Paranoia[]>();
 
   myAppUrl: string = "";  
@@ -63,10 +62,12 @@ export class ParanoiaService {
       newParanoia)
       .subscribe(
         (res) => {
-        console.log(res)
-        //  this.paranoiaArray = res.paranoia;
-        //  this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
-        // this.paranoiaListChangedEvent.next(res.paranoia);
+          console.log(res)
+          this.paranoiaArray = res.paranoia;
+          console.log(this.paranoiaArray)
+          console.log(res.paranoia)
+          this.paranoiaListChangedEvent.next(this.paranoiaArray.slice());
+          // this.paranoiaListChangedEvent.next(res.paranoia);
         });
   }
 
