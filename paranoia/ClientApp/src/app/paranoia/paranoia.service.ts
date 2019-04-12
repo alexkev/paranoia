@@ -62,10 +62,7 @@ export class ParanoiaService {
       newParanoia)
       .subscribe(
         (res) => {
-          console.log(res)
           this.paranoiaArray = res.paranoia;
-          console.log(this.paranoiaArray)
-          console.log(res.paranoia)
           this.paranoiaListChangedEvent.next(this.paranoiaArray);
           // this.paranoiaListChangedEvent.next(res.paranoia);
         });

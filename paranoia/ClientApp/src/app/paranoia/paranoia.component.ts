@@ -55,7 +55,8 @@ export class ParanoiaComponent implements OnInit {
         (paranoiaArray: Paranoia[]) => {
           this.paranoiaArray = paranoiaArray;
           // console.log(this.paranoiaArray);
-          this.newest();
+          if (this.paranoiaArray != undefined)
+            this.newest();
         }
       );
   }
