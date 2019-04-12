@@ -21,7 +21,6 @@ export class ParanoiaComponent implements OnInit {
   
   // POST : 
   originalParanoia: Paranoia;
-  // editMode = false;
 
   constructor(private paranoiaService: ParanoiaService,
     private router: Router) { }
@@ -68,7 +67,6 @@ export class ParanoiaComponent implements OnInit {
     this.arraySubscript();
     this.paranoiaService.getParanoias();
     this.newest();
-    // this.router.navigate(['/paranoia']);
     form.reset();
   }
 
