@@ -42,8 +42,8 @@ export class CardsEditComponent implements OnInit {
     this.paranoiaService.updateParanoia(this.paranoia, newParanoia);
     console.log(this.paranoia);
     console.log(newParanoia);
-    this.paranoiaService.getParanoias();
     this.router.navigate(['/paranoia']);
+    this.paranoiaService.getParanoias();
   }
 
 
