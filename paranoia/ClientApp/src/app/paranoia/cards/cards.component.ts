@@ -27,7 +27,7 @@ export class CardsComponent implements OnInit {
 
   like(id: any) {
     console.log('clicked' + ' ' + id)
-    if (!this.checked) {
+    if (this.checked === false) {
       $('#' + id).attr('src', '../../../assets/thumb-blue.svg');
       this.checked = true;
       this.paranoiaService.updateLike(id, 1);

@@ -82,11 +82,12 @@ export class ParanoiaService {
   }
 
   updateLike(id: number, likes: number) {
-    let paranoiaItem = this.getParanoiaArray(id);
+    let originalParanoia = this.getParanoiaArray(id);
+    let newParanoia = this.getParanoiaArray(id);
+    newParanoia.like += likes;
 
-    paranoiaItem.like += likes;
-
-    this.updateParanoia(this.getParanoiaArray(id), paranoiaItem);
+    this.http.put<{ message: string, paranoias: Paranoia[] }>(this.myAppUrl + 'api/paranoias/' + originalParanoia.id
+      , newParanoia)
   }
 
   deleteParanoia(paranoia: Paranoia) {
